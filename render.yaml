@@ -1,0 +1,16 @@
+builds:
+  - name: client
+    env:
+      - name: NODE_ENV
+        value: production
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    buildDirectory: /Client
+
+  - name: server
+    env:
+      - name: NODE_ENV
+        value: production
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    buildDirectory: /Server
