@@ -1,5 +1,5 @@
 <h1>Welcome to My Project 👋</h1>
-<!-- This project is currently under development, and only the search feature is available. Other parts of the website are still in progress. -->
+This project is currently under development. Other parts of the website are still in progress. <!-- and only the search feature is available. Other parts of the website are still in progress. -->
 
 <h1>Features</h1>
 <ul>
