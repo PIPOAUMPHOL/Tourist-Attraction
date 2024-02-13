@@ -15,7 +15,7 @@ function Header() {
       setData([]);
     } else {
       const response = await axios.get(
-        `http://localhost:4001/trips?keywords=${search}`
+        `https://tourist-attraction-server-eiy4.onrender.com/trips?keywords=${search}`
       );
 
       setData(response.data.data);
