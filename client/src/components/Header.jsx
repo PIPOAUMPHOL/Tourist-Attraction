@@ -9,16 +9,25 @@ export const searchDataContext = React.createContext();
 function Header() {
   const [search, setSearch] = useState("");
   const [data, setData] = useState([]);
+  const [isError, setIsError] = useState(null);
+  const [isLoading, setIsLoading] = useState(null);
 
   async function getSearchData() {
     if (search == "") {
       setData([]);
     } else {
-      const response = await axios.get(
-        `https://tourist-attraction-server-eiy4.onrender.com/trips?keywords=${search}`
-      );
+      try {
+        setIsError(false);
+        setIsLoading(true);
+        const response = await axios.get(
+          `https://tourist-attraction-server-eiy4.onrender.com/trips?keywords=${search}`
+        );
 
-      setData(response.data.data);
+        setData(response.data.data);
+        setIsLoading(false);
+      } catch (error) {
+        setIsError(true);
+      }
     }
   }
 
@@ -28,7 +37,9 @@ function Header() {
 
   return (
     <>
-      <searchDataContext.Provider value={{ searchData: data }}>
+      <searchDataContext.Provider
+        value={{ searchData: data, isError: isError, isLoading: isLoading }}
+      >
         <div
           css={css`
             display: flex;
