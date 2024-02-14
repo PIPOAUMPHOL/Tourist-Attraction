@@ -185,15 +185,6 @@ function Content() {
                     />
                   </div>
                 </div>
-                <img
-                  src={linkIcon}
-                  css={css`
-                    width: 50px;
-                    position: absolute;
-                    right: 10px;
-                    bottom: 30px;
-                  `}
-                />
               </div>
             </div>
           </div>
